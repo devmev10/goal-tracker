@@ -6,7 +6,7 @@ import GoalInput from "./components/GoalInput";
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
 
-  function addGoalHandler() {
+  function addGoalHandler(enteredGoalText) {
     setCourseGoals((prev) => [
       ...prev,
       { text: enteredGoalText, id: Math.random().toString() },
@@ -17,7 +17,7 @@ export default function App() {
     <View style={styles.appContainer}>
       <GoalInput
         goalInputHandler={goalInputHandler}
-        addGoalHandler={addGoalHandler}
+        onAddGoal={addGoalHandler}
       />
 
       <View style={styles.goalsContainer}>
